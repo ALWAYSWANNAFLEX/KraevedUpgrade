@@ -1,0 +1,50 @@
+extends common/layout
+
+block content
+    .content.region    
+        .article
+            .regionMap    
+            a.close(href="/")
+            h2 Общая информация
+            p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, quod!
+            .lists                
+                p.dropbutton Достопримечательности
+                .droplist
+                    ul
+                        -let n = 5
+                        while n > 0 
+                            li 
+                                a(href="#") Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, molestiae?
+                            -n--
+                p.dropbutton Выдающиеся земляки
+                .droplist
+                    ul
+                        -let k = 5
+                        while k > 0 
+                            li 
+                                a(href="persons_child.html") Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, molestiae?
+                            -k--
+                p.dropbutton Населённые пункты
+                .droplist.cities
+                    ul
+                        -let a = 24
+                        while a > 0 
+                            li Новосибирск
+                            -a--
+        .sidebar
+            h1 Северный район
+            .options                
+                img(src="img/regionLogo.png", alt="region")
+                div
+                    p Год основания: 1933
+                    p Площадь: 15569,50 км2
+                    p Население: 10600 чел.
+                    p До Новосибирска: 434км
+                    a(href="#") Сайт района
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto libero praesentium accusamus doloremque repudiandae. Sapiente, sit molestias dolore inventore nisi tenetur. Necessitatibus iure sapiente ea nisi rem quibusdam, illum eligendi eveniet mollitia? Sit corporis consectetur, eligendi voluptatum tenetur molestias, nostrum veniam sed cupiditate dignissimos ad enim ut sapiente perferendis ipsum quam voluptate? Iure architecto ad error! Maxime, iste numquam. Illum, provident dignissimos. Aut voluptatibus, accusamus dolor nam iusto quibusdam numquam consequuntur adipisci inventore. Quas esse, exercitationem accusamus eligendi aliquam tempora ratione odio at sint? Eveniet corporis commodi a ut temporibus, fugiat, quam eos ab atque ducimus corrupti blanditiis in nihil.
+            p Идея герба - Антоненко В.П.
+            p Составили герб - Журавков А.Ю., Кошелев А.В.
+            p Изобразил герб - Журавков А.Ю.
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corrupti quidem eligendi exercitationem numquam iste blanditiis est quibusdam quisquam repudiandae. Placeat exercitationem quo iure inventore?
+        .sidebaropen
+            p Открыть боковое меню

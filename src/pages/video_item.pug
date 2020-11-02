@@ -1,0 +1,30 @@
+extends common/layout
+
+block content
+    .content
+        .singleVideo
+            .player
+            p.name Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, nostrum!
+            p.views 1 тыс. просмотров
+        .videos
+            -let n = 20
+            while n > 0
+                a.videos_item(href="video_item.html")
+                    .videos_item__preview
+                        .time
+                            p 55:55
+                    .videos_item__title
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea velit aspernatur voluptatibus aliquid iste natus sunt quibusdam tempora beatae repellat!
+                    .videos_item__info
+                        p.views 999 тыс. просмотров 
+                        p 10 месяцев назад
+                .sidebar
+                    p Видеотека
+                    p Видеотека Новосибирского краеведческого портала - это постоянно обновляющееся собрание всех самых интересных видео по истории города. Среди них - исторические хроники, обзоры, интервью, авторские передачи, лекции и т.д.
+                    form#search
+                        input(type="search" placeholder="Поиск по разделу...")
+                        button
+                            i.fas.fa-search
+                .sidebaropen
+                    p Открыть боковое меню
+                -n--

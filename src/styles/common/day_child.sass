@@ -1,0 +1,40 @@
+@import "../mixins/media"
+
+.content
+    &.day_child
+        padding: 0 40% 0 20%
+    .article
+        position: relative
+        top: 0
+        padding: 100px 0
+.close
+    display: block
+    width: 32px
+    height: 32px
+    right: 0
+    position: absolute
+    top: 50px
+    opacity: .5
+    transition: opacity .2s ease
+    &:hover
+        opacity: 1
+        transition: opacity .2s ease
+    &:before, &:after
+        position: absolute
+        right: 16.5px
+        content: ' '
+        height: 33px
+        width: 2px
+        background: #000
+    &:before
+        transform: rotate(45deg)
+    &:after
+        transform: rotate(-45deg)
+
+@include media-custom ($width: 900px)
+    .content
+        &.day_child
+            padding: 0 40% 0 5%
+            .article
+                font-size: adpt(14, 10, 900, 320)
+    

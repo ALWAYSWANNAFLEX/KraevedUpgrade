@@ -1,0 +1,43 @@
+@import "../mixins/media"
+.content
+    &.day
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        padding-left: 10%
+.day_item 
+    background-size: cover
+    background-repeat: no-repeat 
+    color: #ffffff
+    padding-top: 100%
+    width: 100%
+    position: relative
+    .day_item__text
+        position: absolute
+        top: 50%
+        transform: translate(0, -50%)
+        left: 10%
+    h2
+        font-size: adpt(30, 23, 1920, 900)
+        font-weight: 700
+    p
+        margin-top: 15px
+        font-size: adpt(18, 11, 1920, 900)
+
+@include media-custom($width: 900px)
+    .content
+        &.day
+            padding: 0 10%
+
+@include media-custom($width: 600px)
+    .content
+        &.day
+            padding: 10px 5%
+            grid-template-columns: 1fr
+            grid-row-gap: 10px
+    .day_item
+        h2
+            font-size: adpt(50, 32, 600, 320)
+        p
+            font-size: adpt(22, 12, 600, 320)
+
+

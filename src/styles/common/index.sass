@@ -1,0 +1,34 @@
+@import "../mixins/media"
+
+.discription
+    background-image: url('../img/index.png')
+    background-size: cover
+    background-repeat: no-repeat
+    height: calc( 100vh - 126px )
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 100px
+    .text
+        width: 50%
+        background-color: #ffffff
+        padding: 50px
+.map
+    padding: 40px 30px
+    display: flex
+    font-size: 12px
+.y-maps
+    margin-left: 20px
+
+@include media-custom($width: 900px)
+    .discription
+        padding: 100px 30px
+        height: auto
+        .text
+            width: 100%
+    .map
+        flex-direction: column
+    .y-maps
+        margin: 0
+        margin-top: 30px

@@ -1,0 +1,33 @@
+@import "../../local_modules/normalize.css/normalize";
+
+*,
+*::before,
+*::after 
+    box-sizing: inherit
+
+*
+    margin: 0
+    padding: 0
+    
+html 
+    box-sizing: border-box
+    font-family: Comfortaa
+body 
+    margin: 0
+
+img 
+    max-width: 100%
+
+a 
+    text-decoration: none
+
+@function adpt($before, $after, $before_width, $after_width)
+    $m : ($before - $after) / ($before_width - $after_width)
+    $b : ($after - $m * $after_width)
+    $result_vw : $m * 100vw
+    $result_px : $b+px
+    $result : $result_vw + $result_px
+    @return calc(#{$result_vw} + #{$result_px})
+
+$green: #45ac82
+$gray: #dedede

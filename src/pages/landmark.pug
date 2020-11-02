@@ -1,0 +1,47 @@
+extends common/layout
+
+block content
+    .content
+        .grid
+            a.item(href="landmark-item.html" style="background-image: url('/img/item1.png')")
+                .background
+                .place
+                    p.name дк октябрьской революции
+                    p Новосибирск
+            a.item(href="landmark-item.html" style="background-image: url('/img/item2.png')")
+                .background
+                .place
+                    p.name дк октябрьской революции
+                    p Новосибирск
+            a.item(href="landmark-item.html" style="background-image: url('/img/item3.png')")
+                .background
+                .place
+                    p.name дк октябрьской революции
+                    p Новосибирск
+            a.item(href="landmark-item.html" style="background-image: url('/img/item4.png')")
+                .background
+                .place
+                    p.name дк октябрьской революции
+                    p Новосибирск
+            a.item(href="landmark-item.html" style="background-image: url('/img/item5.png')")
+                .background
+                .place
+                    p.name дк октябрьской революции
+                    p Новосибирск
+        .sidebar
+            p Достопримечательности
+            p В разделе представлены архитектурные, природные и мемориальные достопримечательности Новосибирска и Новосибирской области.
+            i.lighter Поиск в разделе осуществляется в том числе по названию населенных пунктов
+            form#search
+                input(type="search" placeholder="Поиск по разделу...")
+                button
+                    i.fas.fa-search
+            form#radio
+                p Достопримечательности:
+                form
+                    each val, index in ['Архитектурно-исторические', 'Природные', 'Мемориальные']
+                        .radio
+                            input(type="radio" id="radio" + (index + 1) + '"' name="radio")
+                            label(for="radio" + (index + 1) + '"')= val
+        .sidebaropen
+            p Открыть боковое меню

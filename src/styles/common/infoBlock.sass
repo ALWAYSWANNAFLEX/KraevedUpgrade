@@ -1,0 +1,47 @@
+@import "../mixins/media"
+
+.infoBlock
+    position: absolute
+    right: 0
+    top: 0
+    width: 30%
+    background-color: $gray
+    img
+        width: 100%
+        max-height: 400px
+    .subscription
+        background-color: $gray
+        padding: 20px 50px
+        .name
+            font-size: 25px
+            font-weight: 700
+        .date
+            font-weight: 500
+            font-size: 20px
+        .info
+            padding: 10px 0
+    &.person 
+        img
+            width: 40%
+        .subscription
+            padding: 20px 100px
+            .name
+                word-spacing: 99999px
+
+@include media-custom ($width: 900px)
+    .infoBlock
+        .subscription
+            font-size: adpt(12, 7, 900, 320)
+            padding: 10px 20px
+            .name
+                font-size: adpt(20, 10, 900, 320)
+        &.person
+            img
+                width: 60%
+            .subscription
+                font-size: adpt(12, 7, 900, 320)
+                padding: 10px 20px
+                .name
+                    font-size: adpt(20, 10, 900, 320)
+                .date
+                    font-size: adpt(18, 10, 900, 320)

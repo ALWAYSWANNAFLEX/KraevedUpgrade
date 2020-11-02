@@ -1,0 +1,46 @@
+@import "../mixins/media"
+.grid
+    max-width: 1570px
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    .item
+        background-repeat: no-repeat
+        background-size: cover
+        height: adpt(500, 300, 1920, 900)
+        position: relative
+        transition: all .2s ease
+        .background
+            opacity: 0
+            background-color: #4eb88e
+            width: 100%
+            position: absolute
+            height: 100%
+            top: 0
+        &:hover
+            .place
+                opacity: 1
+                transition: all .2s ease
+            .background
+                opacity: .7
+        .place
+            font-family: Roboto
+            font-weight: 700
+            font-size: 14px
+            color: #fff
+            position: absolute
+            text-align: center
+            left: 50%
+            top: 50%
+            width: 100%
+            transform: translate(-50%, -50%)
+            opacity: 0
+        .name
+            text-transform: uppercase
+            font-size: 20px
+
+@include media-custom($width: 900px)
+    .grid
+        grid-template-columns: 1fr
+        grid-row-gap: 10px
+        .item
+            height: adpt(400, 260, 900, 320)

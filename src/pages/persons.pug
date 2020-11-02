@@ -1,0 +1,31 @@
+extends common/layout
+
+block content
+
+    .content.persons
+        -let n = 10
+        while n > 0
+            a.persons_item(href="persons_child.html")
+                img(src="img/person1.png", alt="person")
+                p Плахотный Николай Михайлович
+            a.persons_item.gray(href="persons_child.html")
+                img(src="img/person2.png", alt="person")
+                p Покрышкин Александр Иванович
+            -n--
+        .sidebar
+            p Выдающиеся земляки
+            p Справки о жизни и деятельности жителей Новосибирска и Новосибирской области.
+            p.lighter Поиск в разделе осуществляется как по ФИО, так и по тексту биографии (напр., можно искать по названию района).
+            form#search
+                input(type="search")
+                button
+                    i.fas.fa-search
+            form#radio
+                p Выберете область:
+                form
+                    each val, index in ['Все', 'Общество и управление', 'Экономика', 'Культура', 'Наука и образование', 'Медицина и спорт', 'Герои Отечества']
+                        .radio
+                            input(type="radio" id="radio" + (index + 1) + '"' name="radio")
+                            label(for="radio" + (index + 1) + '"')= val
+        .sidebaropen
+            p Открыть боковое меню

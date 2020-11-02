@@ -1,0 +1,129 @@
+@import "../mixins/media"
+
+.content
+    min-height: 120vh
+    position: relative
+    padding-right: adpt(350, 290, 1920, 900)
+.sidebar
+    position: absolute
+    right: 0
+    top: 1px
+    width: adpt(350, 290, 1920, 900)
+    padding: 20px 40px
+    font-size: adpt(14, 10, 1920, 900)
+    box-sizing: border-box
+    line-height: 20px
+    min-height: 100vh
+    overflow: hidden
+    background-color: #fff
+    overflow-y: scroll
+    height: 100%
+    p
+        margin: 10px 0
+        &.lighter
+            color: #a39493
+    input[type="radio"]
+        display: none
+        &:checked
+            &+label::before
+                background-color: #000
+                transition: background-color .2s ease
+    .radio
+        margin-top: 5px
+        label
+            margin-left: 20px
+            position: relative
+            &:before
+                content: ''
+                display: inline-block
+                width: 15px
+                height: 15px
+                border: 1px solid black
+                position: absolute
+                left: -20px
+                transition: background-color .2s ease
+        &:nth-child(1)
+            margin-top: 0
+            
+    input[type="date"]
+        width: 100%
+    input, label
+        outline: none
+        cursor: pointer
+    #date
+        margin-right: 10px
+        width: 60px
+        height: 20px
+    .date
+        display: flex
+        align-items: flex-start
+        margin-top: 20px
+    .blueLogo
+        display: flex
+        margin-top: 20px
+        img
+            margin-right: 10px
+            height: 100%
+            width: 35%
+        a
+            font-size: adpt(14, 10, 1920, 900)
+            color: #000
+            text-decoration: underline
+    #search
+        margin-top: 20px
+        position: relative
+        input
+            width: 100%
+            padding: 2px 5px 
+        button
+            cursor: pointer
+            position: absolute
+            right: 0
+            border: none
+            outline: none
+            background-color: $green
+            color: #fff
+            padding: 4px 15px
+    p.search
+        font-size: 12px
+.sidebaropen
+    display: none
+    width: 100px
+    text-align: center
+    background-color: $green
+    color: #ffffff
+    padding: 10px 20px 
+    box-sizing: border-box
+    font-size: 10px
+    border-radius: 30px
+    opacity: .7
+    transition: all .2s ease
+    cursor: pointer
+    position: absolute
+    top: 10px
+    right: 10px
+    &:hover
+        opacity: 1
+        transition: all .2s ease
+    &.active
+        right: 190px
+        transition: all .2s ease
+@include media-custom($width: 900px)
+    .content
+        padding-right: 0
+    .sidebar
+        position: fixed
+        width: 200px
+        right: -200px
+        transition: right .2s ease-out
+        font-size: 10px
+        padding: 10px
+        &.active
+            position: absolute
+            right: 0
+            transition: right .2s ease-out
+        .blueLogo
+            a
+                font-size: 10px
+    .sidebaropen
+        display: block

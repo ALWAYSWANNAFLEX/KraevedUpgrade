@@ -1,0 +1,202 @@
+@import "../mixins/media"
+
+.title
+    display: flex
+    justify-content: flex-start
+    padding: 10px 30px 0
+    h1
+        font-weight: 700
+        font-size: adpt(30, 10, 1920, 320)
+        color: #000
+.social-media
+    margin-left: 10px
+    display: flex
+    a
+        font-size: 20px
+        color: $green
+        i
+            padding: 6px 5px 5px 5px 
+            border: 2px solid $gray
+            border-radius: 50%
+            transition: .3s ease
+        &:nth-child(1)
+            margin-right: 5px
+        &:nth-child(2)
+            i
+                padding: 5px 9px
+        &:hover
+            i
+                border-color: #000000
+                transition: .3s ease
+.navmenu
+    display: flex
+    list-style-type: none
+    justify-content: space-between
+    align-items: center
+    padding: 0 30px 10px
+    li
+        font-size: adpt(18, 8, 1920, 900)
+        a
+            color: #000
+    form
+        position: relative
+        input
+            border: 1px solid $gray
+            padding: 3px
+            height: 20px
+            box-sizing: border-box
+            outline: none
+            width: 150px
+            padding-right: 5px
+        button
+            position: absolute
+            right: 0px
+            top: 0px
+            background-color: $green
+            border: none
+            padding: 4px
+            box-sizing: border-box
+            color: #ffffff
+            font-size: 10px
+.newsline
+    background-color: $green
+    padding: 5px 30px
+    font-weight: 600
+    .slick-slide
+        outline: none
+    a
+        color: #ffffff
+.menu
+    overflow: hidden
+    cursor: pointer
+    display: none
+    z-index: 11
+    &.active
+        &:before
+            animation: slideLeft .2s .05s ease-out forwards
+        &:after
+            animation: slideRight .2s .05s ease-out forwards
+        .bar
+            animation: rotate45 .2s ease-out forwards
+            &:last-child
+                animation: rotate135 .2s .2s ease-out forwards
+    &.back
+        &:before
+            transform: translate(-120%)
+            animation: slideBack .2s .05s ease-out forwards
+        &:after
+            transform: translate(120%)
+            animation: slideBack .2s .05s ease-out forwards
+        .bar
+            transform: translate(-45deg)
+            animation: rotateBack .2s ease-out forwards
+            &:last-child
+                transform: rotate(-135deg)
+                animation: rotateBack .2s .2s ease-out forwards
+    &:before, &:after
+        content: ''
+        display: block
+        width: 25px
+        height: 5px
+        background: $green
+    .bar
+        display: block
+        width: 25px
+        height: 5px
+        background-color: $green
+        margin: 4px 0
+        &:last-child
+            opacity: 0
+            transform: rotate(-45deg)
+            position: absolute
+            top: adpt(18, 14, 900, 320)
+.mobile
+    position: fixed
+    display: none
+    z-index: 11
+    background-color: #ffffff
+    top: 0
+    padding: 10px
+    height: 100vh
+    left: -230px
+    max-width: 230px 
+    transition: left .2s ease
+    &.active
+        left: 0
+    li
+        margin-top: 10px
+.overlay
+    width: calc(100% - 100px)
+    height: 100%
+    z-index: 10
+    position: absolute
+    top: 0
+    left: 100px
+    background-color: #000
+    visibility: hidden
+    opacity: 0
+    transition: opacity .2s ease
+    display: none
+    &.active
+        display: block
+        visibility: visible
+        opacity: .3
+        transition: opacity .2s ease
+@keyframes rotate135
+    form
+        opacity: 1
+        transform: rotate(-45deg)
+    to
+        opacity: 1
+        transform: rotate(-135deg)
+@keyframes rotate45
+    to
+        transform: rotate(-45deg)
+@keyframes rotateBack
+    to
+        transform: rotate(0)
+@keyframes slideRight 
+    to 
+        transform: translateX(122%)
+@keyframes slideLeft 
+    to 
+        transform: translateX(-122%)
+@keyframes slideBack 
+    to 
+        transform: translateX(0)
+
+@include media-custom($width: 1000px)
+    .title
+        .social-media
+            margin-top: 0
+
+@include media-custom($width: 900px)
+    .for-mobile
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 10px 0
+    .title
+        padding: 0
+        padding: 15px 0
+        .social-media
+            display: none
+    .navmenu
+        display: none
+        &.mobile
+            display: block
+        li
+            font-size: 13px
+        form    
+            input
+                width: 100%
+    .menu 
+        display: block
+    .social-media
+        margin-top: 10px
+    .newsline
+        padding: 5px 10px
+    h1
+        margin: 0
+
+

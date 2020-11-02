@@ -1,0 +1,67 @@
+@import "../mixins/media"
+
+.videos
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-column-gap: 5px
+    justify-items: center
+    padding: 0 15px 15px
+.singleVideo
+    margin: 15px auto
+    padding: 15px 20px
+    font-family: Roboto, Arial, Helvetica, sans-serif
+    border-bottom: 1px solid $gray
+    max-width: 1520px
+    .name
+        margin-top: 10px
+        font-weight: 400
+        font-size: 18px
+    .views
+        font-weight: 300
+        font-size: 14px
+        margin-top: 5px
+    .player
+        width: 100%
+        height: adpt(450, 170, 1920, 320)
+        background-color: $gray
+.videos_item
+    font-family: Roboto, Arial, Helvetica,sans-serif
+    color: #000
+    width: 100%
+    max-width: 450px
+    margin: 10px 5px
+    &__preview
+        height: 200px
+        width: 100%
+        background-color: $gray
+        position: relative
+        p
+            position: absolute
+            bottom: 5px
+            right: 10px
+            background-color: #000
+            color: #fff
+            padding: 1px 3px
+            border-radius: 5px
+    &__title
+        margin-top: 10px 
+        font-size: 20px
+        font-weight: 500
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        overflow: hidden
+        text-overflow: ellipsis
+    &__info
+        font-weight: 300
+        font-size: 14px
+        margin-top: 5px
+        .views
+            margin-bottom: 3px
+            &:after
+                content: "•"
+                margin: 0 4px
+
+@include media-custom($width: 615px)
+    .videos
+        grid-template-columns: 1fr

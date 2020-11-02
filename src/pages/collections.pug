@@ -1,0 +1,24 @@
+extends common/layout
+
+block content
+    .content.collections
+        -let names = ["Сибирская периодика", "Западно-Сибирская магистраль", "Комсомол Новосибирской области: вехи истории"];
+        each name, index in names
+            a.collections_item(href="collectionItem.html")
+                .collections_item__title(style="background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('img/collections" + (index + 1) + ".png'); background-size: cover;")
+                    i.fas.fa-book
+                    h2=name
+                .collections_item__news-preview
+                    p <b>Цифровая коллекция "Сибирская переодика"</b> включает дореволюционные сибирские издания, региональные газеты советского периода, в т.ч. газету "Советская Сибирь" и первый литературно-художественный журнал за Уралом - журнал "Сибирские огни".
+        .sidebar
+            p Электронные коллекции
+            p В разделе представлена часть электронной библиотеки НГОНБ, относящаяся к краеведческой тематике. Электронные коллекции включают в себя оцифрованные версии книг, газет, журналов, фото- и видео- материалов о жизни Новосибирска и Новосибирской области.
+            form#search
+                input(type="search")
+                button
+                    i.fas.fa-search
+            .blueLogo
+                img(src="img/sidebarLogo.png", alt="logo")
+                a(href="https://elibrary.ngonb.ru/catalog/4190/") Смотреть всю электронную коллекцию НГОНБ
+        .sidebaropen
+            p Открыть боковое меню

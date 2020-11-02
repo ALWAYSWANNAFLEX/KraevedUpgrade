@@ -1,0 +1,93 @@
+@import "../mixins/media"
+
+.content
+    &.region
+        padding-right: adpt(434, 345, 1920, 900)
+        .article
+            padding: 100px 20%
+            h2
+                padding-bottom: 10px
+            .close
+                right: 20%
+            .regionMap
+                width: 100%
+                height: adpt(450, 250, 1920, 900)
+                background-color: $gray
+                margin-bottom: 30px
+        .sidebar
+            width: adpt(434, 345, 1920, 900)
+            h1 
+                font-size: adpt(20, 17, 1920, 900)
+            .options
+                display: flex
+                justify-content: space-between
+                align-items: flex-start
+                font-size: adpt(14, 11, 1920, 900)
+                img
+                    width: 40%
+                p 
+                    margin: 0
+                a
+                    color: #000
+.lists
+    display: flex
+    flex-direction: column
+.dropbutton
+    font-weight: 700
+    cursor: pointer
+    margin-top: 20px
+    &:hover
+        text-decoration: underline
+.droplist
+    display: none
+    margin-top: 20px
+    li
+        margin-top: 5px
+        a
+            color: #000
+            &:hover
+                text-decoration: underline
+        &:nth-child(1)
+            margin-top: 0
+    &.cities
+        column-width: 100%
+        column-count: 3
+        li
+            list-style-type: none
+@include media-custom($width: 900px)
+    .content
+        &.region
+            padding-right: 0
+            .article
+                padding: adpt(100, 120, 900, 320) adpt(100, 10, 900, 320)
+                h2
+                    font-size: adpt(26, 22, 900, 320)
+                p
+                    font-size: adpt(20, 17, 900, 320)
+                .close
+                    right: adpt(100, 10, 900, 320)
+                    top: adpt(50, 70, 900, 320)
+            .sidebar
+                top: 77px
+                width: adpt(240, 190, 900, 320)
+                right: -275px
+                &.active
+                    right: 0
+                    top: 0
+                h1
+                    margin-top: 10px
+                .options
+                    margin-top: 10px
+                    img
+                        width: 30%
+                p, a
+                    display: block
+                    font-size: adpt(11, 8, 900, 320)
+                    line-height: adpt(13, 11, 900, 320)
+            .sidebaropen
+                &.active
+                    right: adpt(240, 190, 900, 320)
+    .droplist
+        li
+            font-size: adpt(20, 12, 900, 320)
+

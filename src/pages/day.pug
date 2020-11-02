@@ -1,0 +1,29 @@
+extends common/layout
+
+block content
+    .content.day
+        -var n = 0
+        while n < 21
+            a.day_item(href="day_child.html" style="background-image: url('img/dayTest.png');")
+                .day_item__text    
+                    h2 1933 год
+                    p открылся Новосибирский государственный драматический театр "Старый дом"
+            -n++
+        .sidebar
+            p День в истории
+            p Раздел формируется из статей и справок ежегодного издания НГОНБ "Каледарь знаменательных и памятных дат Новосибирской области"
+            form 
+                input(type="date")
+                .date    
+                    input#date(type="checkbox")
+                    label(for="date") Выбрать все юбилейные даты выбранного месяца текущего года
+            .blueLogo
+                img(src="img/sidebarLogo.png", alt="logo")
+                a(href="https://elibrary.ngonb.ru/catalog/4190/") Читать все выпуски КЗПД НСО в электронной библиотеке НГОНБ
+            form#search
+                input(type="search")
+                button
+                    i.fas.fa-search
+            p.search Введите поисковое слово: <br> фамилию, топоним, название организации, др.
+        .sidebaropen
+            p Открыть боковое меню

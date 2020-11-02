@@ -1,0 +1,35 @@
+@import "../mixins/media"
+
+.collections
+    &_item
+        color: #000
+        &__title
+            display: flex
+            flex-direction: column
+            padding: 10px 30px
+            padding-top: 15%
+            color: #ffffff
+            background-size: cover
+            h2
+                text-transform: uppercase
+                margin-top: 10px
+        &__news-preview
+            column-width: 100%
+            column-count: 2
+            padding: 30px 50px
+            background-color: $gray
+
+@include media-custom($width: 900px)
+    .collections
+        h2 
+            font-size: adpt(24, 15, 900, 320)
+        i
+            font-size: adpt(20, 14, 900, 320)
+        &_item
+            &__news-preview
+                padding: 30px 20px
+                p
+                    font-size: adpt(20, 11, 900, 320)
+            &__title
+                padding: 10px 
+                padding-top: 15%
