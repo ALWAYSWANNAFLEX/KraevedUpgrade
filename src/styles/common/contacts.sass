@@ -1,0 +1,43 @@
+@import "../mixins/media"
+
+.contact
+    .sidebar
+        font-size: adpt(18, 12, 1920, 900)
+        p
+            margin: 15px 0
+        a
+            color: #000000
+            &:hover
+                text-decoration: underline
+.contacts
+    padding: 30px 10%
+    display: flex
+    justify-content: space-between
+    .story
+        padding-right: adpt(300, 0, 1920, 900)
+        h1
+            font-size: adpt(26, 14, 1920, 900)
+        p
+            font-size: adpt(18, 11, 1920, 900)
+    .images
+        display: flex
+        flex-direction: column
+        width: 100%
+        img
+            width: 80%
+            &:nth-last-child(1)
+                margin-top: 20px
+.blackLogo
+    display: flex
+    align-items: center
+    margin-top: 10px
+    img
+        width: 15%
+        margin-right: 10px
+
+@include media-custom($width: 900px)
+    .contacts
+        .images
+            width: 60%
+        .story
+            width: 100%

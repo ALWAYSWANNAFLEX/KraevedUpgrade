@@ -4,39 +4,49 @@
     background-color: #e8e8e8
 
 .prev-carousel
-    height: 500px
+    height: adpt(800, 400, 1920, 900)
     width: 95%
     .slick-dots
         text-align: right
-.preview-img
+.preview-img, .preview-nav
     width: 90%
-    height: 500px
+    height: adpt(800, 400, 1920, 900)
     background-size: cover
+    background-repeat: no-repeat
 
 .attr-disc
-    padding: 10px 20px 
+    padding: 10px 0 30px 5%
+    width: 95%
     h1
-        font-size: 20px
+        font-size: adpt(35, 20, 1920, 900)
         text-transform: uppercase
+        margin-bottom: 5px
+    p
+        font-size: adpt(20, 14, 1920, 900)
     h3
-        font-size: 16px
+        font-size: adpt(18, 14, 1920, 900)
         margin-top: 20px
-        font-weight: 300
+    ul
+        margin-top: 20px
+    li
+        list-style-type: none
+        margin-top: adpt(5, 10, 1920, 900)
     .item-disc
         display: flex
         .left
             width: 50%
             margin-right: 20px
             .slider-nav
-                width: 300px
-                .preview-img
-                    width: 80px
-                    height: 50px
+                width: 100%
+                .preview-nav
+                    width: 25% !important
+                    height: adpt(100, 40, 1920, 900)
                     margin-right: 20px
                     margin-top: 20px
                     cursor: pointer
+                    outline: none
             ul
-                font-size: 14px
+                font-size: adpt(18, 14, 1920, 900)
         .right
             width: 50%
             margin-top: 20px
@@ -46,3 +56,22 @@
                 background-color: lightgray
             p
                 margin-top: 20px
+
+@include media-custom($width: 900px)
+    .prev-carousel
+        width: 100%
+        height: adpt(400, 230, 900, 320)
+    .preview-img
+        height: adpt(400, 230, 900, 320)
+    .attr-disc
+        .item-disc
+            display: block
+            .left
+                width: 100%
+                .slider-nav
+                    .preview-nav
+                        width: 25% !important
+                        height: adpt(100, 50, 900, 320)
+            .right
+                .map
+                    height: adpt(200, 75, 900, 320)

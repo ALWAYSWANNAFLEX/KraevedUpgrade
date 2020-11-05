@@ -14,13 +14,17 @@ $('.prev-carousel').slick({
     dots: true,
     asNavFor: '.slider-nav'
 });
-$('.slider-nav').slick({
-    asNavFor: '.prev-carousel',
-    arrows: false,
-    focusOnSelect: true,
-    adaptiveHeight: true,
-    slidesToShow: 4
+$(document).ready(function () {
+    let all = $('.preview-nav').length;
+    $('.slider-nav').slick({
+        asNavFor: '.prev-carousel',
+        arrows: false,
+        focusOnSelect: true,
+        adaptiveHeight: true,
+        slidesToShow: all
+    });
 });
+
 $('.menu').click(function() {
 	if($(this).is('.active:not(.back)')) {
         $(this).addClass('back');

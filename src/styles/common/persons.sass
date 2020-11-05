@@ -8,6 +8,18 @@
     display: flex
     align-items: center
     color: #000
+    position: relative
+    &:hover
+        .green
+            opacity: .7
+            transition: opacity .1s ease
+    .green
+        background-color: $green
+        height: 100%
+        width: 40%
+        position: absolute
+        opacity: 0
+        transition: opacity .1s ease
     img
         height: 100%
         width: 40%
